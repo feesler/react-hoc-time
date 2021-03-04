@@ -1,27 +1,5 @@
 import React, { useState } from 'react';
-import withPrettyTime from './components/withPrettyTime/withPrettyTime.jsx';
-
-
-function DateTime(props) {
-  return (
-    <p className="date">{props.date}</p>
-  )
-}
-
-const DateTimePretty = withPrettyTime(DateTime);
-
-function Video(props) {
-  return (
-    <div className="video">
-      <iframe src={props.url} frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen></iframe>
-      <DateTimePretty date={props.date} />
-    </div>
-  )
-}
-
-function VideoList(props) {
-  return props.list.map(item => <Video key={item.url} url={item.url} date={item.date} />);
-}
+import VideoList from './components/VideoList/VideoList.jsx';
 
 export default function App() {
   const [list, setList] = useState([
